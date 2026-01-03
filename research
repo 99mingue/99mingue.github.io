@@ -1,2 +1,8 @@
-<h1>Research</h1>
-<p>My research interests and highlights.</p>
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="projects.html">Projects</a>
+  <a href="publications.html"><b>Publications</b></a>
+  <a href="contact.html">Contact</a>
+</nav>
+
