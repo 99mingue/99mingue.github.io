@@ -3,49 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <title>CV | Mingyu Kang</title>
-
+  <link rel="stylesheet" href="style.css">
   <style>
-    body { font-family: Arial, sans-serif; margin: 60px; color: #111; }
-    .navbar { display: flex; gap: 28px; font-size: 18px; margin-bottom: 60px; }
-    .navbar a { text-decoration: none; color: #555; font-weight: 500; }
-    .navbar a:hover { color: #000; text-decoration: underline; }
-    .navbar a.active { color: #000; font-weight: 700; text-decoration: underline; }
-
-    h1 { margin-bottom: 10px; }
-    p { color: #444; font-size: 18px; line-height: 1.6; max-width: 900px; }
+    /* 버튼만 이 페이지에서 살짝 예쁘게 */
     .btn {
       display: inline-block;
-      margin-top: 18px;
+      margin-top: 16px;
       padding: 12px 16px;
-      border: 1px solid rgba(0,0,0,0.2);
-      border-radius: 10px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: var(--accentText);
       text-decoration: none;
-      color: #111;
-      font-weight: 600;
+      font-weight: 800;
+      border: 1px solid rgba(0,0,0,0.15);
     }
-    .btn:hover { background: rgba(0,0,0,0.05); }
+    .btn:hover { filter: brightness(0.98); transform: translateY(-1px); }
   </style>
 </head>
-
 <body>
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-    <a href="cv.html" class="active">CV</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <h1>Curriculum Vitae</h1>
-  <p>
-    You can download my CV as a PDF.
-  </p>
+<div class="container">
 
-  <!-- CV PDF 경로: files/CV.pdf -->
-  <a class="btn" href="files/CV.pdf" target="_blank">Download CV (PDF)</a>
+  <div class="topbar">
+    <a class="brand" href="index.html">Mingyu Kang</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="cv.html" class="active">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 
-  <p style="margin-top:18px; font-size:16px; color:#666;">
-    If the button shows 404, upload your CV to <b>files/CV.pdf</b> in this repository.
-  </p>
+  <div class="page">
+    <h1>Curriculum Vitae</h1>
+    <p>You can download my CV as a PDF.</p>
+
+    <a class="btn" href="files/CV.pdf" target="_blank">Download CV (PDF)</a>
+
+    <p style="color: rgba(246,242,234,0.78); font-size: 14px; margin-top: 18px;">
+      If the button shows 404, upload your PDF to <b>files/CV.pdf</b>.
+    </p>
+
+    <h2 style="margin-top: 34px;">Quick Summary</h2>
+    <ul>
+      <li>Education: (add your degree / university)</li>
+      <li>Research: (short highlight)</li>
+      <li>Awards: (optional)</li>
+    </ul>
+  </div>
+
+</div>
+
 </body>
 </html>
+
