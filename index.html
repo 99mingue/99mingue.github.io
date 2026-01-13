@@ -159,118 +159,80 @@
     }
 
     /* Research directions section */
-   /* Section cards (Research interests / Experience / Education) */
-.section{
-  margin-top: 18px;                 /* 기존 26 -> 18로 줄여서 위로 당김 */
-  padding: 26px 34px;
-  border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.085) 0%, rgba(255,255,255,0.05) 100%);
-  border: 1px solid var(--cardBorder);
-  box-shadow: 0 18px 55px rgba(0,0,0,0.14);
-  backdrop-filter: blur(6px);
-}
+    .section{
+      margin-top: 26px;
+      padding: 28px 34px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.05) 100%);
+      border: 1px solid var(--cardBorder);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.16);
+      backdrop-filter: blur(6px);
+    }
 
-.section-title{
-  margin: 0 0 16px;
-  font-size: 18px;
-  font-weight: 900;
-  letter-spacing: 0.4px;
-  color: var(--text);
-}
+    .section-title{
+      margin: 0 0 18px;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+      color: var(--text);
+    }
 
-.rd-grid{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px 18px;                   /* 간격 조금 타이트하게 */
-}
+    .rd-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 22px;
+    }
 
-.rd-item{
-  padding: 16px 16px 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.06);
-}
+    .rd-item{
+      padding: 16px 16px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+    }
 
-.rd-item h3{
-  margin: 0 0 8px;
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--text);
-}
+    .rd-item h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--text);
+    }
 
-.rd-item p{
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
-}
+    .rd-item p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-/* Gradient divider between sections */
-.divider{
-  height: 1px;
-  margin: 18px 6px;
-  border: 0;
-  background: linear-gradient(90deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.18) 20%,
-    rgba(255,255,255,0.28) 50%,
-    rgba(255,255,255,0.18) 80%,
-    rgba(255,255,255,0) 100%);
-}
+    /* Experience / Education line layout inside cards */
+    .row{
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .date{
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .desc{
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
 
-/* Timeline list for Experience / Education */
-.timeline{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.tl-item{
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  gap: 14px;
-  padding: 14px 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.06);
-}
-
-.tl-date{
-  font-weight: 800;
-  font-size: 14px;
-  color: var(--text);
-  white-space: nowrap;
-}
-
-.tl-desc{
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-.tl-desc b{
-  color: var(--text);
-}
-
-/* Make background slightly brighter toward the bottom */
-body{
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: var(--text);
-  background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 60%, rgba(255,255,255,0.04) 100%);
-}
-
-/* Mobile */
-@media (max-width: 860px){
-  .hero{ grid-template-columns: 1fr; }
-  .avatar{ width: 180px; height: 220px; }
-  .name{ font-size: 34px; }
-  .topbar{ align-items:flex-start; flex-direction:column; }
-  .rd-grid{ grid-template-columns: 1fr; }
-  .tl-item{ grid-template-columns: 1fr; }
-  .tl-date{ opacity: 0.95; }
-}
-
+    /* Mobile */
+    @media (max-width: 860px){
+      .hero{ grid-template-columns: 1fr; }
+      .avatar{ width: 180px; height: 220px; }
+      .name{ font-size: 34px; }
+      .topbar{ align-items:flex-start; flex-direction:column; }
+      .rd-grid{ grid-template-columns: 1fr; }
+      .row{ grid-template-columns: 1fr; }
+      .date{ opacity: 0.95; }
+    }
   </style>
 </head>
 
@@ -279,7 +241,6 @@ body{
 
     <div class="topbar">
       <a class="brand" href="index.html">Mingyu Kang</a>
-
       <nav class="navbar">
         <a href="index.html" class="active">Home</a>
         <a href="research.html">Research</a>
@@ -300,8 +261,7 @@ body{
         <div class="affil">Mechanical Design &amp; Robot Engineering, SeoulTech</div>
 
         <p class="bio">
-          Research interests in Haptic Interface Systems, Architected Materials, Flexible Electronics, Energy Harvesting
-          and Physical AI.
+          Research interests in Haptic Interface Systems, Architected Materials, Flexible Electronics, Energy Harvesting and Physical AI.
         </p>
 
         <div class="quicklinks">
@@ -338,6 +298,59 @@ body{
       </div>
     </section>
 
+    <!-- Experience -->
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="rd-grid">
+        <div class="rd-item">
+          <div class="row">
+            <div class="date">03/2024 - Present</div>
+            <div class="desc">Lab Researcher (MNDL Lab,Seoul National University of Science and Technology)</div>
+          </div>
+        </div>
+
+        <div class="rd-item">
+          <div class="row">
+            <div class="date">03/2022 - 02/2024</div>
+            <div class="desc">Undergraduate Researcher (MNDL Lab,Seoul National University of Science and Technology)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+
+      <div class="rd-grid">
+        <div class="rd-item">
+          <div class="row">
+            <div class="date">03/2026 - Present</div>
+            <div class="desc">Ph. D. Student (Mech. Design & Robotics Eng., Seoul National University of Science and Technology, Advisor: Prof. Soonjae Pyo)</div>
+          </div>
+        </div>
+
+        <div class="rd-item">
+          <div class="row">
+            <div class="date">03/2024 - 02/2026</div>
+            <div class="desc">M. S.  (Mech. Design & Robotics Eng., Seoul National University of Science and Technology, Advisor: Prof. Soonjae Pyo)</div>
+          </div>
+        </div>
+      </div>
+        
+        <div class="rd-item">
+          <div class="row">
+            <div class="date">03/2018 - 02/2024</div>
+            <div class="desc">B. S. (Mech. Sys. Eng.,Seoul National University of Science and Technology)</div>
+          </div>
+        </div>
+      </div>
+
+      
+    </section>
+
   </div>
 </body>
 </html>
+
