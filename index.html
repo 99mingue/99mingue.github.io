@@ -75,22 +75,6 @@
       background: rgba(255,255,255,0.12);
     }
 
-    .cta{
-      text-decoration:none;
-      color: var(--accentText);
-      background: var(--accent);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 14px;
-      border: 1px solid rgba(0,0,0,0.15);
-      white-space: nowrap;
-    }
-    .cta:hover{
-      filter: brightness(0.98);
-      transform: translateY(-1px);
-    }
-
     /* Hero */
     .hero{
       margin-top: 26px;
@@ -119,15 +103,8 @@
       width:100%;
       height:100%;
       object-fit:cover;
+      object-position: center top;
       display:block;
-    }
-
-    .kicker{
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(246,242,234,0.78);
-      margin: 0 0 10px;
     }
 
     .name{
@@ -181,12 +158,59 @@
       background: rgba(255,255,255,0.12);
     }
 
+    /* Research directions section */
+    .section{
+      margin-top: 26px;
+      padding: 28px 34px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.05) 100%);
+      border: 1px solid var(--cardBorder);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.16);
+      backdrop-filter: blur(6px);
+    }
+
+    .section-title{
+      margin: 0 0 18px;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+      color: var(--text);
+    }
+
+    .rd-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 22px;
+    }
+
+    .rd-item{
+      padding: 16px 16px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .rd-item h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .rd-item p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
     /* Mobile */
     @media (max-width: 860px){
       .hero{ grid-template-columns: 1fr; }
-      .avatar{ width: 180px; height: 180px; }
+      .avatar{ width: 180px; height: 220px; }
       .name{ font-size: 34px; }
       .topbar{ align-items:flex-start; flex-direction:column; }
+      .rd-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -204,8 +228,6 @@
         <a href="cv.html">CV</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="cta" href="contact.html">Work with me</a>
     </div>
 
     <section class="hero">
@@ -215,18 +237,44 @@
 
       <div>
         <h1 class="name">Mingyu Kang | 강민규</h1>
-        <div class="role">Ph.D. Student @ MNDL LAB</div>
+        <div class="role">Ph.D. student @ Mndl lab</div>
         <div class="affil">Mechanical Design &amp; Robot Engineering, SeoulTech</div>
 
         <p class="bio">
-          Research interests in Wearable Sensors and Actuators, Haptic Interfaces, Nanomaterial-Integrated Flexible Electronics,
-          and Physical AI.
+          Research interests in wearable sensors and actuators, haptic interfaces, nanomaterial integrated flexible electronics,
+          and physical ai.
         </p>
 
         <div class="quicklinks">
-          <a class="pill" href="research.html">Research Topics</a>
-          <a class="pill" href="publications.html">Selected Publications</a>
-          <a class="pill" href="cv.html">Download CV</a>
+          <a class="pill" href="research.html">Research topics</a>
+          <a class="pill" href="publications.html">Selected publications</a>
+          <a class="pill" href="cv.html">Download cv</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Research directions</h2>
+
+      <div class="rd-grid">
+        <div class="rd-item">
+          <h3>Haptic interface systems</h3>
+          <p>Tactile sensors, tactile actuators</p>
+        </div>
+
+        <div class="rd-item">
+          <h3>Architected materials</h3>
+          <p>Auxetic, metamaterials, 3d printed lattices, micro domes</p>
+        </div>
+
+        <div class="rd-item">
+          <h3>Ai for physical interaction</h3>
+          <p>Force prediction, object recognition, drl based design</p>
+        </div>
+
+        <div class="rd-item">
+          <h3>Energy harvesting</h3>
+          <p>Self powered sensors</p>
         </div>
       </div>
     </section>
