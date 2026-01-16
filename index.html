@@ -7,17 +7,15 @@
 
   <style>
     :root{
-      /* Theme palette (sage/olive + cream + sand + black) */
-      --bg: #7C786B;         /* olive-gray */
-      --bg2: #6F6A5F;        /* deeper olive */
-      --text: #F6F2EA;       /* warm cream */
+      --bg: #7C786B;
+      --bg2: #6F6A5F;
+      --text: #F6F2EA;
       --muted: rgba(246,242,234,0.78);
       --card: rgba(255,255,255,0.08);
       --cardBorder: rgba(255,255,255,0.14);
-
-      --accent: #E6D6C5;     /* sand button */
-      --accentText: #1A1A1A; /* near black */
-      --ink: #0B0B0B;        /* black-ish */
+      --accent: #E6D6C5;
+      --accentText: #1A1A1A;
+      --ink: #0B0B0B;
     }
 
     * { box-sizing: border-box; }
@@ -34,7 +32,6 @@
       padding: 28px 20px 80px;
     }
 
-    /* Top bar */
     .topbar{
       display:flex;
       align-items:center;
@@ -75,7 +72,6 @@
       background: rgba(255,255,255,0.12);
     }
 
-    /* Hero */
     .hero{
       margin-top: 26px;
       padding: 34px;
@@ -158,7 +154,6 @@
       background: rgba(255,255,255,0.12);
     }
 
-    /* Research directions section */
     .section{
       margin-top: 26px;
       padding: 28px 34px;
@@ -177,6 +172,7 @@
       color: var(--text);
     }
 
+    /* Research Interests: 2-column */
     .rd-grid{
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -204,7 +200,13 @@
       line-height: 1.6;
     }
 
-    /* Experience / Education line layout inside cards */
+    /* Experience/Education: 1-column (세로) */
+    .list{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
     .row{
       display: grid;
       grid-template-columns: 170px 1fr;
@@ -223,7 +225,6 @@
       color: var(--muted);
     }
 
-    /* Mobile */
     @media (max-width: 860px){
       .hero{ grid-template-columns: 1fr; }
       .avatar{ width: 180px; height: 220px; }
@@ -272,6 +273,7 @@
       </div>
     </section>
 
+    <!-- Research Interests (2-column 유지) -->
     <section class="section">
       <h2 class="section-title">Research Interests</h2>
 
@@ -298,59 +300,57 @@
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- Experience (세로 1열) -->
     <section class="section">
       <h2 class="section-title">Experience</h2>
 
-      <div class="rd-grid">
+      <div class="list">
         <div class="rd-item">
           <div class="row">
             <div class="date">03/2024 - Present</div>
-            <div class="desc">Lab Researcher (MNDL Lab,Seoul National University of Science and Technology)</div>
+            <div class="desc">Lab researcher (MNDL Lab, Seoul National University of Science and Technology)</div>
           </div>
         </div>
 
         <div class="rd-item">
           <div class="row">
             <div class="date">03/2022 - 02/2024</div>
-            <div class="desc">Undergraduate Researcher (MNDL Lab,Seoul National University of Science and Technology)</div>
+            <div class="desc">Undergraduate researcher (MNDL Lab, Seoul National University of Science and Technology)</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Education -->
+    <!-- Education (세로 1열) -->
     <section class="section">
       <h2 class="section-title">Education</h2>
 
-      <div class="rd-grid">
+      <div class="list">
         <div class="rd-item">
           <div class="row">
             <div class="date">03/2026 - Present</div>
-            <div class="desc">Ph. D. Student (Mech. Design & Robotics Eng., Seoul National University of Science and Technology, Advisor: Prof. Soonjae Pyo)</div>
+            <div class="desc">Ph.D. student (Mech. Design &amp; Robotics Eng., Seoul National University of Science and Technology, Advisor: Prof. Soonjae Pyo)</div>
           </div>
         </div>
 
         <div class="rd-item">
           <div class="row">
             <div class="date">03/2024 - 02/2026</div>
-            <div class="desc">M. S.  (Mech. Design & Robotics Eng., Seoul National University of Science and Technology, Advisor: Prof. Soonjae Pyo)</div>
+            <div class="desc">M.S. (Mech. Design &amp; Robotics Eng., Seoul National University of Science and Technology, Advisor: Prof. Soonjae Pyo)</div>
           </div>
         </div>
-      </div>
-        
+
         <div class="rd-item">
           <div class="row">
             <div class="date">03/2018 - 02/2024</div>
-            <div class="desc">B. S. (Mech. Sys. Eng.,Seoul National University of Science and Technology)</div>
+            <div class="desc">B.S. (Mech. Sys. Eng., Seoul National University of Science and Technology)</div>
           </div>
         </div>
       </div>
-
-      
     </section>
 
   </div>
 </body>
 </html>
+
 
