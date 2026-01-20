@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mingyu Kang</title>
 
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     :root{
       /* WIX-like clean navy theme */
@@ -194,6 +197,12 @@
       transform: translateY(-1px);
     }
 
+    /* Icon tuning */
+    .pill i{
+      opacity: 0.85;
+      margin-right: 8px;
+    }
+
     /* Sections */
     .section{
       margin-top: 22px;
@@ -327,12 +336,28 @@
           Research interests in haptic interface systems, architected materials, flexible electronics, energy harvesting, and physical AI.
         </p>
 
+        <!-- Quick links (with icons + MNDL Lab link) -->
         <div class="quicklinks">
-          <a class="pill" href="research.html">Research topics</a>
-          <a class="pill" href="publications.html"> Publications</a>
-          <a class="pill" href="cv.html"> CV</a>
+          <a class="pill" href="research.html">
+            <i class="fa-solid fa-flask"></i>Research topics
+          </a>
+
+          <a class="pill" href="publications.html">
+            <i class="fa-solid fa-book-open"></i>Publications
+          </a>
+
+          <a class="pill" href="cv.html">
+            <i class="fa-solid fa-file-lines"></i>CV
+          </a>
+
           <a class="pill" href="https://scholar.google.com/citations?user=TMONlkcAAAAJ&hl=ko" target="_blank" rel="noopener noreferrer">
-    Google Scholar</a>
+            <i class="fa-solid fa-graduation-cap"></i>Google Scholar
+          </a>
+
+          <!-- MNDL Lab: 여기에 실제 연구실 홈페이지 주소로 바꿔주세요 -->
+          <a class="pill" href="https://sites.google.com/view/soonjaepyo/home" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-building-columns"></i>MNDL Lab
+          </a>
         </div>
       </div>
     </section>
