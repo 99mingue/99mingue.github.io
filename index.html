@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,6 +11,7 @@
       --bg2: #6F6A5F;
       --text: #F6F2EA;
       --muted: rgba(246,242,234,0.78);
+      --card: rgba(255,255,255,0.08);
       --cardBorder: rgba(255,255,255,0.14);
       --accent: #E6D6C5;
       --accentText: #1A1A1A;
@@ -25,17 +26,14 @@
       background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
     }
 
-    /* ===== Full-width header area (no card) ===== */
-    .header-wrap{
-      width: 100%;
-      padding: 18px 0 0;
-    }
+    a { color: var(--text); text-decoration: none; }
 
-    /* Top bar stays aligned with content width */
+    /* ================= Topbar ================= */
+
     .container{
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 28px 20px;
     }
 
     .topbar{
@@ -43,15 +41,12 @@
       align-items:center;
       justify-content:space-between;
       gap:16px;
-      padding: 10px 0 18px;
     }
 
     .brand{
       font-size: 20px;
-      letter-spacing: 0.5px;
       font-weight: 700;
-      color: var(--text);
-      text-decoration:none;
+      letter-spacing: 0.5px;
     }
 
     .navbar{
@@ -62,308 +57,191 @@
     }
 
     .navbar a{
-      text-decoration:none;
       color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 8px 10px;
       border-radius: 10px;
     }
+
+    .navbar a.active,
     .navbar a:hover{
-      color: var(--text);
-      background: rgba(255,255,255,0.08);
-    }
-    .navbar a.active{
       color: var(--text);
       background: rgba(255,255,255,0.12);
     }
 
-    /* ===== Full-width hero banner ===== */
-    .hero-banner{
+    /* ================= Full-width Banner ================= */
+
+    .top-banner{
       width: 100%;
-      height: 340px;
+      height: 300px;
       position: relative;
       overflow: hidden;
-      margin-top: 8px;
+      margin: 18px 0 26px;
     }
 
-    .hero-banner img{
+    .top-banner img{
       width: 100%;
       height: 100%;
-      object-fit: cover;            /* 화면 꽉 채우기 */
-      object-position: center;      /* 중심 기준 */
+      object-fit: cover;
+      object-position: center;
       display: block;
     }
 
-    /* Dark gradient overlay (text readable) */
-    .hero-banner::after{
+    .top-banner::after{
       content:"";
       position:absolute;
       inset:0;
       background: linear-gradient(
         180deg,
-        rgba(0,0,0,0.15) 0%,
-        rgba(0,0,0,0.35) 65%,
-        rgba(0,0,0,0.55) 100%
+        rgba(0,0,0,0.25) 0%,
+        rgba(0,0,0,0.45) 100%
       );
-      pointer-events:none;
     }
 
-    /* Text block on top of banner */
-    .hero-text{
-      position:absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 28px;
-      width: min(1100px, calc(100% - 40px));
-      padding: 0 20px;
-      z-index: 1;
-    }
+    /* ================= Hero Card ================= */
 
-    .hero-name{
-      margin: 0 0 8px;
-      font-size: 44px;
-      font-weight: 900;
-      letter-spacing: -0.6px;
-      line-height: 1.05;
-    }
-
-    .hero-role{
-      margin: 0 0 6px;
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    .hero-affil{
-      margin: 0 0 14px;
-      font-size: 15px;
-      color: rgba(246,242,234,0.86);
-    }
-
-    .hero-bio{
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.7;
-      color: rgba(246,242,234,0.90);
-      max-width: 980px;
-    }
-
-    /* ===== Main content area below banner (your original style) ===== */
-    .main{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 26px 20px 80px;
-    }
-
-    .page{
-      margin-top: 24px;
-      padding: 40px;
+    .hero{
+      padding: 34px;
       border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.06) 100%);
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.10) 0%,
+        rgba(255,255,255,0.06) 100%
+      );
       border: 1px solid var(--cardBorder);
       box-shadow: 0 26px 70px rgba(0,0,0,0.18);
+      display:grid;
+      grid-template-columns: 240px 1fr;
+      gap: 34px;
+      align-items:center;
+      backdrop-filter: blur(6px);
     }
 
-    /* Research interests cards (2 columns) */
-    .section-title{
-      margin: 0 0 14px;
+    .avatar{
+      width: 220px;
+      height: 280px;
+      border-radius: 20px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.12);
+    }
+
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .name{
+      font-size: 44px;
+      font-weight: 900;
+      margin: 0 0 10px;
+      letter-spacing: -0.6px;
+    }
+
+    .role{
       font-size: 18px;
-      font-weight: 900;
-      letter-spacing: 0.4px;
-      color: var(--text);
+      font-weight: 800;
+      margin-bottom: 6px;
     }
 
-    .rd-grid{
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px 22px;
-    }
-
-    .rd-item{
-      padding: 16px 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.06);
-    }
-
-    .rd-item h3{
-      margin: 0 0 8px;
-      font-size: 16px;
-      font-weight: 900;
-      color: var(--text);
-    }
-
-    .rd-item p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    /* ===== Experience/Education vertical cards (your latest style) ===== */
-    .section-title2{
-      margin: 28px 0 14px;
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: 0.4px;
-      color: var(--text);
-    }
-
-    .card-list{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .card{
-      padding: 16px 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.06);
-    }
-
-    .card-row{
-      display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 16px;
-      align-items: start;
-    }
-
-    .card-date{
-      font-weight: 900;
-      font-size: 14px;
-      color: var(--text);
-      opacity: 0.95;
-      white-space: nowrap;
-    }
-
-    .card-desc{
+    .affil{
       font-size: 15px;
-      line-height: 1.65;
+      margin-bottom: 14px;
       color: var(--muted);
     }
 
-    /* Mobile */
-    @media (max-width: 900px){
-      .topbar{ flex-direction: column; align-items:flex-start; }
-      .hero-banner{ height: 280px; }
-      .hero-name{ font-size: 34px; }
-      .rd-grid{ grid-template-columns: 1fr; }
+    .bio{
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 820px;
     }
 
-    @media (max-width: 700px){
-      .page{ padding: 26px; }
-      .card-row{ grid-template-columns: 1fr; }
-      .card-date{ margin-bottom: 6px; }
+    .quicklinks{
+      margin-top: 18px;
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.08);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .pill:hover{
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ================= Mobile ================= */
+
+    @media (max-width: 900px){
+      .top-banner{ height: 220px; }
+      .hero{ grid-template-columns: 1fr; }
+      .avatar{ width: 180px; height: 220px; }
+      .name{ font-size: 34px; }
+      .topbar{ flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- FULL-WIDTH HEADER + BANNER -->
-  <div class="header-wrap">
-    <div class="container">
-      <div class="topbar">
-        <a class="brand" href="index.html">Mingyu Kang</a>
-        <nav class="navbar">
-          <a href="index.html" class="active">Home</a>
-          <a href="research.html">Research</a>
-          <a href="publications.html">Publications</a>
-          <a href="cv.html">CV</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
+  <!-- Topbar -->
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">Mingyu Kang</div>
+      <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </div>
 
-    <!-- Change this image path -->
-    <section class="hero-banner">
-      <img src="assets/hero.jpg" alt="Hero banner">
-      <div class="hero-text">
-        <h1 class="hero-name">Mingyu Kang | 강민규</h1>
-        <div class="hero-role">Ph.D. student @ Mndl lab</div>
-        <div class="hero-affil">Mechanical Design &amp; Robot Engineering, SeoulTech</div>
-        <p class="hero-bio">
-          Research interests in Haptic Interface Systems, Architected Materials, Flexible Electronics, Energy Harvesting and Physical AI.
+  <!-- Full-width banner -->
+  <div class="top-banner">
+    <img src="assets/banner.jpg" alt="Top banner">
+  </div>
+
+  <!-- Hero card -->
+  <div class="container">
+    <section class="hero">
+      <div class="avatar">
+        <img src="assets/profile.jpg" alt="Profile photo">
+      </div>
+
+      <div>
+        <h1 class="name">Mingyu Kang | 강민규</h1>
+        <div class="role">Ph.D. Student @ MNDL Lab</div>
+        <div class="affil">
+          Mechanical Design &amp; Robot Engineering, SeoulTech
+        </div>
+
+        <p class="bio">
+          Research interests in haptic interface systems, architected materials,
+          flexible electronics, energy harvesting, and physical AI.
         </p>
+
+        <div class="quicklinks">
+          <a class="pill" href="research.html">Research topics</a>
+          <a class="pill" href="publications.html">Selected publications</a>
+          <a class="pill" href="cv.html">Download CV</a>
+        </div>
       </div>
     </section>
   </div>
 
-  <!-- MAIN CONTENT (keeps your style) -->
-  <main class="main">
-
-    <section class="page">
-      <h2 class="section-title">Research Interests</h2>
-
-      <div class="rd-grid">
-        <div class="rd-item">
-          <h3>Haptic interface systems</h3>
-          <p>Tactile sensors, Tactile actuators</p>
-        </div>
-
-        <div class="rd-item">
-          <h3>Architected materials</h3>
-          <p>Auxetic, Metamaterials, 3D printed lattices, Micro structures</p>
-        </div>
-
-        <div class="rd-item">
-          <h3>Ai for physical interaction</h3>
-          <p>Force prediction, Object recognition, DRL based design</p>
-        </div>
-
-        <div class="rd-item">
-          <h3>Energy harvesting</h3>
-          <p>Self-powered sensors</p>
-        </div>
-      </div>
-
-      <h2 class="section-title2">Experience</h2>
-      <div class="card-list">
-        <div class="card">
-          <div class="card-row">
-            <div class="card-date">03/2024 - Present</div>
-            <div class="card-desc">Lab Researcher (MNDL Lab, Seoul National University of Science and Technology)</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-date">03/2022 - 02/2024</div>
-            <div class="card-desc">Undergraduate Researcher (MNDL Lab, Seoul National University of Science and Technology)</div>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="section-title2">Education</h2>
-      <div class="card-list">
-        <div class="card">
-          <div class="card-row">
-            <div class="card-date">03/2026 - Present</div>
-            <div class="card-desc">Ph.D. Student (Mech. Design &amp; Robotics Eng., Seoul National University of Science and Technology, Advisor: Prof. Soonjae Pyo)</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-date">03/2024 - 02/2026</div>
-            <div class="card-desc">M.S. (Mech. Design &amp; Robotics Eng., Seoul National University of Science and Technology, Advisor: Prof. Soonjae Pyo)</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-date">03/2018 - 02/2024</div>
-            <div class="card-desc">B.S. (Mech. Sys. Eng., Seoul National University of Science and Technology)</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
 </body>
 </html>
+
 
 
