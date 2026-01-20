@@ -1,42 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact | Mingyu Kang</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mingyu Kang | Contact</title>
+
+  <style>
+    :root{
+      --bg: #FFFFFF;
+      --surface: #F5F6F8;
+      --card: #FFFFFF;
+      --border: rgba(15, 23, 42, 0.12);
+
+      --text: #0F172A;
+      --muted: rgba(15, 23, 42, 0.72);
+
+      --navy: #0B1B44;
+      --navy2: #0A235E;
+      --link: #0B1B44;
+
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+      --radius: 18px;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a{ color: var(--link); text-decoration: none; }
+
+    .container{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 16px 0 18px;
+    }
+
+    .brand{
+      font-size: 20px;
+      letter-spacing: 0.2px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .navbar{
+      display:flex;
+      gap: 18px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .navbar a{
+      color: rgba(15,23,42,0.75);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .navbar a:hover{
+      color: var(--navy);
+      background: rgba(11, 27, 68, 0.08);
+    }
+
+    .navbar a.active{
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .section{
+      margin-top: 22px;
+      padding: 24px 26px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .section-title{
+      margin: 0 0 14px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+      color: var(--text);
+    }
+
+    .lead{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-weight: 650;
+      line-height: 1.7;
+    }
+
+    .card{
+      padding: 16px 16px;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .row{
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .label{
+      font-weight: 900;
+      color: var(--text);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .value{
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 860px){
+      .topbar{ flex-direction: column; align-items:flex-start; }
+      .row{ grid-template-columns: 1fr; }
+      .label{ margin-bottom: 4px; }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
 
-<div class="container">
+    <div class="topbar">
+      <a class="brand" href="index.html">Mingyu Kang</a>
 
-  <div class="topbar">
-    <a class="brand" href="index.html">Mingyu Kang</a>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+
+    <section class="section">
+      <h1 class="section-title">Contact</h1>
+      <p class="lead">
+        Add your contact information here.
+      </p>
+
+      <div class="card">
+        <div class="row">
+          <div class="label">Email</div>
+          <div class="value">yourname@example.com</div>
+        </div>
+        <div style="height:10px;"></div>
+
+        <div class="row">
+          <div class="label">Affiliation</div>
+          <div class="value">Mechanical Design &amp; Robot Engineering, SeoulTech</div>
+        </div>
+        <div style="height:10px;"></div>
+
+        <div class="row">
+          <div class="label">Address</div>
+          <div class="value">Seoul, Republic of Korea</div>
+        </div>
+        <div style="height:10px;"></div>
+
+        <div class="row">
+          <div class="label">Links</div>
+          <div class="value">
+            <a href="#" target="_blank" rel="noopener">Google Scholar</a> ·
+            <a href="#" target="_blank" rel="noopener">GitHub</a> ·
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
-
-  <div class="page">
-    <h1>Contact</h1>
-    <p>Feel free to reach out.</p>
-
-    <ul>
-      <li>Email: <a href="mailto:your@email.com">your@email.com</a></li>
-      <li>Google Scholar: <a href="#" target="_blank">Link</a></li>
-      <li>GitHub: <a href="https://github.com/99mingue" target="_blank">github.com/99mingue</a></li>
-      <li>LinkedIn: <a href="#" target="_blank">Link</a></li>
-    </ul>
-
-    <p style="color: rgba(246,242,234,0.78); font-size: 14px; margin-top: 18px;">
-      Replace placeholders with your real links.
-    </p>
-  </div>
-
-</div>
-
 </body>
 </html>
+
