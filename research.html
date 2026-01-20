@@ -1,38 +1,179 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Research | Mingyu Kang</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mingyu Kang | Research</title>
+
+  <style>
+    :root{
+      --bg: #7C786B;
+      --bg2: #6F6A5F;
+      --text: #F6F2EA;
+      --muted: rgba(246,242,234,0.78);
+      --card: rgba(255,255,255,0.08);
+      --cardBorder: rgba(255,255,255,0.14);
+      --accent: #E6D6C5;
+      --accentText: #1A1A1A;
+      --ink: #0B0B0B;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    }
+
+    .container{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 80px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 10px 0 22px;
+    }
+
+    .brand{
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration:none;
+    }
+
+    .navbar{
+      display:flex;
+      gap: 22px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .navbar a{
+      text-decoration:none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+
+    .navbar a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .navbar a.active{
+      color: var(--text);
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* index 테마 카드(섹션) */
+    .section{
+      margin-top: 26px;
+      padding: 28px 34px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.05) 100%);
+      border: 1px solid var(--cardBorder);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.16);
+      backdrop-filter: blur(6px);
+    }
+
+    .section-title{
+      margin: 0 0 18px;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      color: var(--text);
+    }
+
+    .subtext{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .card-list{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card{
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 860px){
+      .topbar{ align-items:flex-start; flex-direction:column; }
+      .section{ padding: 22px; }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="index.html">Mingyu Kang</a>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
 
-<div class="container">
+    <section class="section">
+      <h1 class="section-title">Research</h1>
+      <p class="subtext">My research interests and highlights.</p>
 
-  <div class="topbar">
-    <a class="brand" href="index.html">Mingyu Kang</a>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="research.html" class="active">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <div class="card-list">
+        <div class="card">
+          <h3>Haptic interface systems</h3>
+          <p>Tactile sensors, Tactile actuators</p>
+        </div>
+
+        <div class="card">
+          <h3>Architected materials</h3>
+          <p>Auxetic, Metamaterials, 3D printed lattices, Micro structures</p>
+        </div>
+
+        <div class="card">
+          <h3>Ai for physical interaction</h3>
+          <p>Force prediction, Object recognition, DRL based design</p>
+        </div>
+
+        <div class="card">
+          <h3>Energy harvesting</h3>
+          <p>Self-powered sensors</p>
+        </div>
+      </div>
+    </section>
   </div>
-
-  <div class="page">
-    <h1>Research</h1>
-    <p>My research focuses on multimodal tactile sensing and haptic interfaces.</p>
-    <ul>
-      <li>Multimodal tactile sensing</li>
-      <li>Haptic interfaces</li>
-      <li>Metamaterial structures</li>
-      <li>Learning-based design</li>
-    </ul>
-  </div>
-
-</div>
-
 </body>
 </html>
 
