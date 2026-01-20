@@ -7,32 +7,62 @@
 
   <style>
     :root{
-      /* Theme palette */
-      --bg: #7C786B;
-      --bg2: #6F6A5F;
-      --text: #F6F2EA;
-      --muted: rgba(246,242,234,0.78);
-      --card: rgba(255,255,255,0.08);
-      --cardBorder: rgba(255,255,255,0.14);
-      --accent: #E6D6C5;
-      --accentText: #1A1A1A;
+      /* WIX-like clean navy theme */
+      --bg: #FFFFFF;
+      --surface: #F5F6F8;      /* section background */
+      --card: #FFFFFF;         /* card background */
+      --border: rgba(15, 23, 42, 0.12);
+
+      --text: #0F172A;         /* near-black (navy-ish) */
+      --muted: rgba(15, 23, 42, 0.72);
+
+      --navy: #0B1B44;         /* main accent */
+      --navy2: #0A235E;        /* hover/alt */
+      --link: #0B1B44;
+
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+      --radius: 18px;
     }
 
-    * { box-sizing: border-box; }
+    *{ box-sizing: border-box; }
 
-    body {
-      margin: 0;
+    body{
+      margin:0;
       font-family: Arial, sans-serif;
       color: var(--text);
-      background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      background: var(--bg);
     }
 
-    a { color: var(--text); text-decoration: none; }
+    a{ color: var(--link); text-decoration: none; }
+
+    /* Full-width top banner */
+    .top-banner{
+      width:100%;
+      height: 320px;
+      position: relative;
+      overflow: hidden;
+      background: #111;
+    }
+    .top-banner img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      object-position: center;
+      display:block;
+    }
+    /* subtle overlay for readability */
+    .top-banner::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 100%);
+      pointer-events:none;
+    }
 
     .container{
       max-width: 1100px;
       margin: 0 auto;
-      padding: 28px 20px 80px;
+      padding: 24px 20px 80px;
     }
 
     /* Top bar */
@@ -41,95 +71,64 @@
       align-items:center;
       justify-content:space-between;
       gap:16px;
-      padding: 10px 0 22px;
+      padding: 16px 0 18px;
     }
 
     .brand{
       font-size: 20px;
-      letter-spacing: 0.5px;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration:none;
+      letter-spacing: 0.2px;
+      font-weight: 800;
+      color: var(--navy);
     }
 
     .navbar{
       display:flex;
-      gap: 22px;
+      gap: 18px;
       align-items:center;
       flex-wrap:wrap;
     }
 
     .navbar a{
-      text-decoration:none;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 15px;
-      padding: 8px 10px;
-      border-radius: 10px;
+      color: rgba(15,23,42,0.75);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
     }
 
     .navbar a:hover{
-      color: var(--text);
-      background: rgba(255,255,255,0.08);
+      color: var(--navy);
+      background: rgba(11, 27, 68, 0.08);
     }
 
     .navbar a.active{
-      color: var(--text);
-      background: rgba(255,255,255,0.12);
-    }
-
-    /* ===== Full-width Top Banner (NEW) ===== */
-    .top-banner{
-      width: 100%;
-      height: 320px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 0;
-    }
-
-    .top-banner img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display:block;
-    }
-
-    .top-banner::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(
-        180deg,
-        rgba(0,0,0,0.15) 0%,
-        rgba(0,0,0,0.35) 100%
-      );
-      pointer-events:none;
+      color: #fff;
+      background: var(--navy);
     }
 
     /* Hero */
     .hero{
-      margin-top: 26px;
-      padding: 34px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.06) 100%);
-      border: 1px solid var(--cardBorder);
-      box-shadow: 0 26px 70px rgba(0,0,0,0.18);
+      margin-top: 14px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
       display:grid;
       grid-template-columns: 240px 1fr;
-      gap: 34px;
+      gap: 28px;
       align-items:center;
-      backdrop-filter: blur(6px);
     }
 
     .avatar{
       width: 220px;
       height: 280px;
-      border-radius: 20px;
+      border-radius: 16px;
       overflow:hidden;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.12);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.10);
     }
 
     .avatar img{
@@ -146,31 +145,33 @@
       margin: 0 0 10px;
       letter-spacing: -0.6px;
       line-height: 1.05;
+      color: var(--text);
     }
 
     .role{
       font-size: 18px;
-      font-weight: 800;
-      margin: 0 0 8px;
-      color: var(--text);
+      font-weight: 900;
+      margin: 0 0 6px;
+      color: var(--navy);
     }
 
     .affil{
       font-size: 15px;
-      margin: 0 0 16px;
+      margin: 0 0 14px;
       color: var(--muted);
+      font-weight: 700;
     }
 
     .bio{
       font-size: 16px;
       line-height: 1.75;
       margin: 0;
-      color: var(--text);
+      color: rgba(15,23,42,0.88);
       max-width: 820px;
     }
 
     .quicklinks{
-      margin-top: 18px;
+      margin-top: 16px;
       display:flex;
       gap: 10px;
       flex-wrap:wrap;
@@ -178,59 +179,58 @@
 
     .pill{
       display:inline-block;
-      text-decoration:none;
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,0.22);
-      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(11, 27, 68, 0.22);
+      background: #fff;
+      color: var(--navy);
       padding: 10px 12px;
       border-radius: 999px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 14px;
+      transition: background 0.15s ease, transform 0.15s ease;
     }
 
     .pill:hover{
-      background: rgba(255,255,255,0.12);
+      background: rgba(11, 27, 68, 0.06);
+      transform: translateY(-1px);
     }
 
-    /* ===== Sections / Cards (Research Interests, Experience, Education) ===== */
-
+    /* Sections */
     .section{
-      margin-top: 26px;
-      padding: 28px 34px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.05) 100%);
-      border: 1px solid var(--cardBorder);
-      box-shadow: 0 22px 60px rgba(0,0,0,0.16);
-      backdrop-filter: blur(6px);
+      margin-top: 22px;
+      padding: 24px 26px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
 
     .section-title{
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       font-size: 18px;
       font-weight: 900;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.2px;
       color: var(--text);
     }
 
-    /* 2-column grid for Research Interests */
+    /* Research interests grid */
     .rd-grid{
-      display: grid;
+      display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px 22px;
+      gap: 14px 16px;
     }
 
     .rd-item{
-      padding: 16px 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.06);
+      padding: 16px 16px;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
     }
 
     .rd-item h3{
       margin: 0 0 8px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 900;
-      color: var(--text);
+      color: var(--navy);
     }
 
     .rd-item p{
@@ -238,34 +238,34 @@
       color: var(--muted);
       font-size: 14px;
       line-height: 1.6;
+      font-weight: 600;
     }
 
-    /* 1-column list for Experience / Education (vertical cards) */
+    /* Vertical card list */
     .card-list{
-      display: grid;
+      display:grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 12px;
     }
 
     .card{
-      padding: 16px 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.06);
+      padding: 16px 16px;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
     }
 
     .card-row{
-      display: grid;
+      display:grid;
       grid-template-columns: 170px 1fr;
-      gap: 16px;
-      align-items: start;
+      gap: 14px;
+      align-items:start;
     }
 
     .card-date{
       font-weight: 900;
       font-size: 14px;
       color: var(--text);
-      opacity: 0.95;
       white-space: nowrap;
     }
 
@@ -273,19 +273,18 @@
       font-size: 15px;
       line-height: 1.65;
       color: var(--muted);
+      font-weight: 650;
     }
 
     /* Mobile */
     @media (max-width: 860px){
       .top-banner{ height: 220px; }
 
+      .topbar{ flex-direction: column; align-items:flex-start; }
       .hero{ grid-template-columns: 1fr; }
       .avatar{ width: 180px; height: 220px; }
       .name{ font-size: 34px; }
-      .topbar{ align-items:flex-start; flex-direction:column; }
-
       .rd-grid{ grid-template-columns: 1fr; }
-
       .card-row{ grid-template-columns: 1fr; }
       .card-date{ margin-bottom: 6px; }
     }
@@ -294,7 +293,7 @@
 
 <body>
 
-  <!-- Full-width Banner (assets/banner.jpg) -->
+  <!-- Full-width Banner -->
   <div class="top-banner">
     <img src="assets/banner.jpg" alt="Top banner">
   </div>
@@ -303,6 +302,7 @@
 
     <div class="topbar">
       <a class="brand" href="index.html">Mingyu Kang</a>
+
       <nav class="navbar">
         <a href="index.html" class="active">Home</a>
         <a href="research.html">Research</a>
@@ -362,7 +362,7 @@
       </div>
     </section>
 
-    <!-- Experience (vertical cards) -->
+    <!-- Experience -->
     <section class="section">
       <h2 class="section-title">Experience</h2>
 
@@ -383,7 +383,7 @@
       </div>
     </section>
 
-    <!-- Education (vertical cards) -->
+    <!-- Education -->
     <section class="section">
       <h2 class="section-title">Education</h2>
 
@@ -414,6 +414,5 @@
   </div>
 </body>
 </html>
-
 
 
