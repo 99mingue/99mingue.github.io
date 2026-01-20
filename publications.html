@@ -1,54 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Publications | Mingyu Kang</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mingyu Kang | Publications</title>
+
+  <style>
+    :root{
+      --bg: #FFFFFF;
+      --surface: #F5F6F8;
+      --card: #FFFFFF;
+      --border: rgba(15, 23, 42, 0.12);
+
+      --text: #0F172A;
+      --muted: rgba(15, 23, 42, 0.72);
+
+      --navy: #0B1B44;
+      --navy2: #0A235E;
+      --link: #0B1B44;
+
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+      --radius: 18px;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a{ color: var(--link); text-decoration: none; }
+
+    .container{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 16px 0 18px;
+    }
+
+    .brand{
+      font-size: 20px;
+      letter-spacing: 0.2px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .navbar{
+      display:flex;
+      gap: 18px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .navbar a{
+      color: rgba(15,23,42,0.75);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .navbar a:hover{
+      color: var(--navy);
+      background: rgba(11, 27, 68, 0.08);
+    }
+
+    .navbar a.active{
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .section{
+      margin-top: 22px;
+      padding: 24px 26px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .section-title{
+      margin: 0 0 14px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+      color: var(--text);
+    }
+
+    .lead{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-weight: 650;
+      line-height: 1.7;
+    }
+
+    .pub-list{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .pub{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .pub .title{
+      margin: 0 0 6px;
+      font-weight: 900;
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .pub .meta{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    @media (max-width: 860px){
+      .topbar{ flex-direction: column; align-items:flex-start; }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
 
-<div class="container">
+    <div class="topbar">
+      <a class="brand" href="index.html">Mingyu Kang</a>
 
-  <div class="topbar">
-    <a class="brand" href="index.html">Mingyu Kang</a>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html" class="active">Publications</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html" class="active">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <section class="section">
+      <h1 class="section-title">Publications</h1>
+      <p class="lead">
+        Add your papers here (selected / full list).
+      </p>
+
+      <div class="pub-list">
+        <!-- Example item (replace with your real list) -->
+        <div class="pub">
+          <p class="title">Paper title goes here</p>
+          <p class="meta">Authors · Venue · Year</p>
+        </div>
+
+        <div class="pub">
+          <p class="title">Paper title goes here</p>
+          <p class="meta">Authors · Venue · Year</p>
+        </div>
+      </div>
+    </section>
+
   </div>
-
-  <div class="page">
-    <h1>Publications</h1>
-    <p>Selected journal and conference publications.</p>
-
-    <ol>
-      <li>
-        <b>Paper title</b>, Author list, <i>Journal/Conference</i>, Year.
-        <a href="#" target="_blank">[PDF]</a>
-        <a href="#" target="_blank">[DOI]</a>
-      </li>
-      <li>
-        <b>Paper title</b>, Author list, <i>Journal/Conference</i>, Year.
-        <a href="#" target="_blank">[PDF]</a>
-        <a href="#" target="_blank">[DOI]</a>
-      </li>
-      <li>
-        <b>Paper title</b>, Author list, <i>Journal/Conference</i>, Year.
-        <a href="#" target="_blank">[PDF]</a>
-        <a href="#" target="_blank">[DOI]</a>
-      </li>
-    </ol>
-
-    <p style="color: rgba(246,242,234,0.78); font-size: 14px; margin-top: 18px;">
-      Tip: Replace entries with your real publications. You can also link Google Scholar here.
-    </p>
-  </div>
-
-</div>
-
 </body>
 </html>
+
 
