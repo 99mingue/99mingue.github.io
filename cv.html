@@ -1,60 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CV | Mingyu Kang</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mingyu Kang | CV</title>
+
   <style>
-    /* 버튼만 이 페이지에서 살짝 예쁘게 */
-    .btn {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      background: var(--accent);
-      color: var(--accentText);
-      text-decoration: none;
-      font-weight: 800;
-      border: 1px solid rgba(0,0,0,0.15);
+    :root{
+      --bg: #FFFFFF;
+      --surface: #F5F6F8;
+      --card: #FFFFFF;
+      --border: rgba(15, 23, 42, 0.12);
+
+      --text: #0F172A;
+      --muted: rgba(15, 23, 42, 0.72);
+
+      --navy: #0B1B44;
+      --navy2: #0A235E;
+      --link: #0B1B44;
+
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+      --radius: 18px;
     }
-    .btn:hover { filter: brightness(0.98); transform: translateY(-1px); }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a{ color: var(--link); text-decoration: none; }
+
+    .container{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 16px 0 18px;
+    }
+
+    .brand{
+      font-size: 20px;
+      letter-spacing: 0.2px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .navbar{
+      display:flex;
+      gap: 18px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .navbar a{
+      color: rgba(15,23,42,0.75);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .navbar a:hover{
+      color: var(--navy);
+      background: rgba(11, 27, 68, 0.08);
+    }
+
+    .navbar a.active{
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .section{
+      margin-top: 22px;
+      padding: 24px 26px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .section-title{
+      margin: 0 0 14px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+      color: var(--text);
+    }
+
+    .lead{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-weight: 650;
+      line-height: 1.7;
+    }
+
+    .btn{
+      display:inline-block;
+      background: var(--navy);
+      color:#fff;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid rgba(11,27,68,0.22);
+    }
+    .btn:hover{ background: var(--navy2); }
+
+    /* card list like index */
+    .card-list{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .card{
+      padding: 16px 16px;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+    .card-row{
+      display:grid;
+      grid-template-columns: 170px 1fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .card-date{
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .card-desc{
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    @media (max-width: 860px){
+      .topbar{ flex-direction: column; align-items:flex-start; }
+      .card-row{ grid-template-columns: 1fr; }
+      .card-date{ margin-bottom: 6px; }
+    }
   </style>
 </head>
+
 <body>
+  <div class="container">
 
-<div class="container">
+    <div class="topbar">
+      <a class="brand" href="index.html">Mingyu Kang</a>
 
-  <div class="topbar">
-    <a class="brand" href="index.html">Mingyu Kang</a>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="cv.html" class="active">CV</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html" class="active">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <section class="section">
+      <h1 class="section-title">CV</h1>
+      <p class="lead">
+        You can link a PDF CV here.
+      </p>
+
+      <!-- Put your CV PDF in /assets/ and rename it, then link below -->
+      <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+    </section>
+
+    <!-- Optional: show CV sections as cards -->
+    <section class="section">
+      <h2 class="section-title" style="font-size:18px; margin:0 0 12px;">Other experience</h2>
+
+      <div class="card-list">
+        <div class="card">
+          <div class="card-row">
+            <div class="card-date">YYYY - YYYY</div>
+            <div class="card-desc">Add your other experience here (club leadership, awards, military service, etc.)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
-
-  <div class="page">
-    <h1>Curriculum Vitae</h1>
-    <p>You can download my CV as a PDF.</p>
-
-    <a class="btn" href="files/CV.pdf" target="_blank">Download CV (PDF)</a>
-
-    <p style="color: rgba(246,242,234,0.78); font-size: 14px; margin-top: 18px;">
-      If the button shows 404, upload your PDF to <b>files/CV.pdf</b>.
-    </p>
-
-    <h2 style="margin-top: 34px;">Quick Summary</h2>
-    <ul>
-      <li>Education: (add your degree / university)</li>
-      <li>Research: (short highlight)</li>
-      <li>Awards: (optional)</li>
-    </ul>
-  </div>
-
-</div>
-
 </body>
 </html>
+
 
