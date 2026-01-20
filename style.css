@@ -144,3 +144,39 @@ a { color: var(--text); }
   .card-date{ margin-bottom: 6px; }
 }
 
+/* ===== Home Top Banner (index only) ===== */
+.banner{
+  margin-top: 10px;
+  height: 280px;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--cardBorder);
+  box-shadow: 0 26px 70px rgba(0,0,0,0.18);
+}
+
+.banner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 어두운 그라데이션 오버레이 (텍스트 읽기 좋게) */
+.banner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.45) 70%,
+    rgba(0,0,0,0.55) 100%
+  );
+}
+
+/* 모바일 */
+@media (max-width: 700px){
+  .banner{ height: 200px; }
+}
+
