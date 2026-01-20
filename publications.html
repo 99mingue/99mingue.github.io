@@ -33,6 +33,7 @@
     }
 
     a{ color: var(--link); text-decoration: none; }
+    a:hover{ color: var(--navy2); }
 
     .container{
       max-width: 1100px;
@@ -98,13 +99,6 @@
       color: var(--text);
     }
 
-    .lead{
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-weight: 650;
-      line-height: 1.7;
-    }
-
     .pub-list{
       display: grid;
       grid-template-columns: 1fr;
@@ -112,6 +106,7 @@
       margin-top: 14px;
     }
 
+    /* Publication card */
     .pub{
       background: var(--card);
       border: 1px solid var(--border);
@@ -119,24 +114,68 @@
       padding: 14px 16px;
     }
 
-    .pub .title{
-      margin: 0 0 6px;
-      font-weight: 900;
-      color: var(--navy);
-      font-size: 15px;
-      line-height: 1.4;
+    .pub-grid{
+      display:grid;
+      grid-template-columns: 240px 1fr;
+      gap: 16px;
+      align-items: start;
     }
 
-    .pub .meta{
+    .pub-figure{
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .pub-figure img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+
+    .pub-text .badge{
+      display:inline-block;
+      font-weight: 900;
+      font-size: 12px;
+      color: rgba(15,23,42,0.70);
+      background: rgba(11, 27, 68, 0.06);
+      border: 1px solid rgba(11, 27, 68, 0.14);
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .pub-text .title{
+      margin: 0 0 8px;
+      font-weight: 900;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .pub-text .venue{
+      margin: 0 0 10px;
+      color: rgba(15,23,42,0.85);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 700;
+    }
+
+    .pub-text .authors{
       margin: 0;
       color: var(--muted);
       font-size: 14px;
       line-height: 1.6;
-      font-weight: 600;
+      font-weight: 650;
     }
 
     @media (max-width: 860px){
       .topbar{ flex-direction: column; align-items:flex-start; }
+      .pub-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -158,21 +197,40 @@
 
     <section class="section">
       <h1 class="section-title">Publications</h1>
-      <p class="lead">
-        Add your papers here (selected / full list).
-      </p>
 
       <div class="pub-list">
-        <!-- Example item (replace with your real list) -->
+
+        <!-- Publication item -->
         <div class="pub">
-          <p class="title">Paper title goes here</p>
-          <p class="meta">Authors · Venue · Year</p>
+          <div class="pub-grid">
+
+            <!-- Representative image -->
+            <div class="pub-figure">
+              <img src="assets/pubs/teng2024.jpg" alt="Representative figure">
+            </div>
+
+            <!-- Text -->
+            <div class="pub-text">
+              <div class="badge">[1]</div>
+
+              <p class="title">
+                <a href="https://doi.org/10.1016/j.nanoen.2024.109071"
+                   target="_blank" rel="noopener noreferrer">
+                  Externally Motionless Triboelectric Nanogenerator Based on Vortex-Induced Rolling for Omnidirectional Wind Energy Harvesting
+                </a>
+              </p>
+
+              <p class="venue"><em>Nano Energy</em>, 119, 109071 (2024)</p>
+
+              <p class="authors">
+                Jong-An Choi, Jingu Jeong, <strong>Mingyu Kang</strong>, Hee-Jin Ko,
+                Taehoon Kim, Keun Park, Jongbaeg Kim, and Soonjae Pyo*
+              </p>
+            </div>
+
+          </div>
         </div>
 
-        <div class="pub">
-          <p class="title">Paper title goes here</p>
-          <p class="meta">Authors · Venue · Year</p>
-        </div>
       </div>
     </section>
 
