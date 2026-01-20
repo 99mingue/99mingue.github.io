@@ -98,50 +98,34 @@
       color: var(--text);
     }
 
-    .lead{
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-weight: 650;
-      line-height: 1.7;
-    }
-
-    .btn{
-      display:inline-block;
-      background: var(--navy);
-      color:#fff;
-      padding: 10px 12px;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 14px;
-      border: 1px solid rgba(11,27,68,0.22);
-    }
-    .btn:hover{ background: var(--navy2); }
-
-    /* card list like index */
+    /* Card list */
     .card-list{
       display:grid;
       grid-template-columns: 1fr;
       gap: 12px;
-      margin-top: 12px;
     }
+
     .card{
       padding: 16px 16px;
       border-radius: 14px;
       background: var(--card);
       border: 1px solid var(--border);
     }
+
     .card-row{
       display:grid;
       grid-template-columns: 170px 1fr;
       gap: 14px;
       align-items:start;
     }
+
     .card-date{
       font-weight: 900;
       font-size: 14px;
       color: var(--text);
       white-space: nowrap;
     }
+
     .card-desc{
       font-size: 15px;
       line-height: 1.65;
@@ -172,32 +156,139 @@
       </nav>
     </div>
 
+    <!-- Experience -->
     <section class="section">
-      <h1 class="section-title">CV</h1>
-      <p class="lead">
-        You can link a PDF CV here.
-      </p>
-
-      <!-- Put your CV PDF in /assets/ and rename it, then link below -->
-      <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
-    </section>
-
-    <!-- Optional: show CV sections as cards -->
-    <section class="section">
-      <h2 class="section-title" style="font-size:18px; margin:0 0 12px;">Other experience</h2>
+      <h1 class="section-title">Experience</h1>
 
       <div class="card-list">
         <div class="card">
           <div class="card-row">
-            <div class="card-date">YYYY - YYYY</div>
-            <div class="card-desc">Add your other experience here (club leadership, awards, military service, etc.)</div>
+            <div class="card-date">03/2024 - Present</div>
+            <div class="card-desc">
+              <strong>Lab Researcher</strong><br>
+              MNDL Lab, Seoul National University of Science and Technology
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-row">
+            <div class="card-date">03/2022 - 02/2024</div>
+            <div class="card-desc">
+              <strong>Undergraduate Researcher</strong><br>
+              MNDL Lab, Seoul National University of Science and Technology
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Education -->
+    <section class="section">
+      <h1 class="section-title">Education</h1>
+
+      <div class="card-list">
+        <div class="card">
+          <div class="card-row">
+            <div class="card-date">03/2026 - Present</div>
+            <div class="card-desc">
+              <strong>Ph.D. Student</strong><br>
+              Mechanical Design &amp; Robotics Engineering,<br>
+              Seoul National University of Science and Technology<br>
+              Advisor: Prof. Soonjae Pyo
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-row">
+            <div class="card-date">03/2024 - 02/2026</div>
+            <div class="card-desc">
+              <strong>M.S.</strong><br>
+              Mechanical Design &amp; Robotics Engineering,<br>
+              Seoul National University of Science and Technology<br>
+              Advisor: Prof. Soonjae Pyo
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-row">
+            <div class="card-date">03/2018 - 02/2024</div>
+            <div class="card-desc">
+              <strong>B.S.</strong><br>
+              Mechanical System Engineering,<br>
+              Seoul National University of Science and Technology
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- Awards -->
+<section class="section">
+  <h1 class="section-title">Awards</h1>
+
+  <div class="card-list">
+
+    <!-- Award 1 -->
+    <div class="card">
+      <div class="card-row" style="grid-template-columns: 220px 1fr;">
+
+        <!-- Left: Award image -->
+        <div>
+          <img src="assets/awards/award_memes_2024.jpg"
+               alt="Best Paper Award Certificate"
+               style="width:100%; border-radius:12px; border:1px solid var(--border);">
+        </div>
+
+        <!-- Right: Text -->
+        <div class="card-desc">
+          <strong>Best Paper Award</strong><br>
+          The 26th Korean MEMS Conference<br>
+          
+          <span style="color:rgba(15,23,42,0.8); font-weight:700;">March 29, 2024</span><br><br>
+
+          <em>
+            인간-로봇 상호작용을 위한 다중 촉각 정보 측정 및 피드백 기반 햅틱 인터페이스
+          </em>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Award 2 -->
+    <div class="card">
+      <div class="card-row" style="grid-template-columns: 220px 1fr;">
+
+        <!-- Left: Award image -->
+        <div>
+          <img src="assets/awards/award_ksme_2023.jpg"
+               alt="Outstanding Paper Award Certificate"
+               style="width:100%; border-radius:12px; border:1px solid var(--border);">
+        </div>
+
+        <!-- Right: Text -->
+        <div class="card-desc">
+          <strong>Outstanding Paper Award</strong><br>
+          <br>
+          <span style="color:rgba(15,23,42,0.8); font-weight:700;">November 24, 2023</span><br><br>
+
+          <em>
+            기계적 메타물질 기반 고감도 및 넓은 선형 감지 범위를 가지는 촉각센서
+          </em>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
   </div>
 </body>
 </html>
+
 
 
